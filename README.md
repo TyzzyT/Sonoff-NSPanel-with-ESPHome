@@ -25,7 +25,7 @@ To make sure that all data on the display is being updated, I'm using a template
 # To-do list
 - Create nicer UI elements. The slider doesn't really fit the theme, but main focus was getting it to work technically
 - Configure the media page, currently it can only do play/pause and volume up/down
-- Forward the current display page to ESPHome
+- Send the current page to ESPHome, so ESPHome knows which page is currently active. This can be useful when sending a notification
 - Display CO2 livingroom value on the dashboard/livingroom page
 - Maybe change the rendered color field into a static image
 - Maybe change the color temperature buttons into a slider
