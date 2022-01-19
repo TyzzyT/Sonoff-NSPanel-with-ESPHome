@@ -1,4 +1,4 @@
-Here you can find my Nextion config (.HMI file). If you've not used the Nextion Editor before it can be a bit overwhelming, so I tried to write as much comments inside the code as possible. But I'll still explain a bit on this page too. If you have any questions, please let me know!\
+Here you can find my [Nextion config (.HMI file)](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/Nextion/nspanel_config.HMI). If you've not used the Nextion Editor before it can be a bit overwhelming, so I tried to write as much comments inside the code as possible. But I'll still explain a bit on this page too. If you have any questions, please let me know!\
 \
 To use variables more easily, I created a lot of global variables under the program's tab. There are things like: brightness setting, screen timeout, swipe navigation, etc.\
 ![progams-variables](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/programs-variables.png?raw=true)\
