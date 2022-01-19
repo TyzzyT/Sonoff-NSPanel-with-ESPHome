@@ -7,7 +7,7 @@ I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/
 # What is included in my NSPanel configuration
 - Dashboard with weather data, indoor temperature, outdoor temperature
 - Lights page, where you can tap to toggle the light and long-press to get a detailed overview of the light
-- Light detail page, where you can set brightness, color temperature, light color
+- Light detail page, where you can set brightness, color and color temperature
 - Media page, where you can select a playlist, view the current playing song and artist, and control the music (work in progress)
 - Thermostat page, with the option to view/control the temperature inside the house
 - Power monitor page, where you can see the current usage and daily usage (work in progress)
