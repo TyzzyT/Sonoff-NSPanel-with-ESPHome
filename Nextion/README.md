@@ -1,6 +1,7 @@
 Here you can find my Nextion config (.HMI file). It's a bit complex, so I tried to write as much comments inside the code as possible. But I'll still explain a bit on this page too. If you have any questions, please let me know!\
 \
 To use variables more easily, I created a lot of global variables under the program's tab. There are things like: brightness setting, screen timeout, swipe navigation, etc.\
+![progams-variables](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/programs-variables.png?raw=true)
 There is a TouchCap on every page where swipe navigation is needed. You can define the go-to page under the _Touch Release Event_ tab of the TouchCap (tc0). The timer tm0 is used to make sure that the touch event has stopped.\
 \
 There is a timer called sleep_timer on every page where screen timeout is wanted. When the timer has finished, it saves the current page in a global variable and then goes to the screensaver page.\
