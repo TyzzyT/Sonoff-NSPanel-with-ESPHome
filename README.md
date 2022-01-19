@@ -1,7 +1,7 @@
 # Sonoff-NSPanel-with-ESPHome
 
 In this Github repo you can find my [Sonoff NSPanel](https://sonoff.tech/product/smart-wall-swtich/nspanel/) config with [ESPHome](https://esphome.io/) and [Home Assistant](https://www.home-assistant.io/).\
-This config is based on the [NSPanel-MF](https://github.com/marcfager/nspanel-mf) config from [marcfager](https://github.com/marcfager), with the [color picker config](https://github.com/MMMZZZZ/Random-Stuff/tree/master/Nextion%20HSV%20Test) from [MMMZZZZ](https://github.com/MMMZZZZ).\
+This config is based on the [NSPanel-MF](https://github.com/marcfager/nspanel-mf) config from [marcfager](https://github.com/marcfager), with the [color picker config](https://github.com/MMMZZZZ/Random-Stuff/tree/master/Nextion%20HSV%20Test) from [MMMZZZZ](https://github.com/MMMZZZZ). Last but not least, huge thanks to [masto](https://github.com/masto/NSPanel-Demo-Files/) for all his hard work. It was him who got me started with the Nextion Editor, after the amazing Youtube video's!\
 I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/98V7qp4), I couldn't have done this without you!
 
 # What is included in my NSPanel configuration
