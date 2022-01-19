@@ -1,4 +1,5 @@
 # Nextion config, for use in the Nextion Editor
+[Download Nextion Editor here](https://nextion.tech/nextion-editor/), to be able to edit or compile the HMI file.
 Here you can find my [Nextion config (.HMI) file](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/Nextion/nspanel_config.HMI). If you've not used the Nextion Editor before it can be a bit overwhelming, so I tried to write as much comments inside the code as possible. On this page, I'll also explain how I achieved things. If you have any questions, please let me know! This can be done under the [Discussions](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/discussions) tab.
 
 ## Variables and page navigation
@@ -28,3 +29,7 @@ When pressing the screen on the alarm page, it will light up the screen to the o
 ## Notification page
 On the notification page, there is a Touch Release Event that takes you to the page _dashboard_, so you can stop the notification from showing. If you don't touch the display, it'll go back after 20 seconds (timer set in ESPHome config).\
 ![notification-touchrelease](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/notification-touchrelease.png?raw=true)
+
+## Global vs. local objects
+When using a global object, the object keeps the current state when switching pages. So for anything that's not static, I set the item to global. This also adds to option to update the object in the background. Example: when on the dashboard page, you can update the thermostat page with the livingroom temperature by using ``thermostat.temp_living.txt="20.1"``\
+
