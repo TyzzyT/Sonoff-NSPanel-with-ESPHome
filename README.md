@@ -1,8 +1,8 @@
 # Sonoff-NSPanel-with-ESPHome
 
-In this Github repo you can find my [Sonoff NSPanel](https://sonoff.tech/product/smart-wall-swtich/nspanel/) config with [SPHome](https://esphome.io/) and [Home Assistant](https://www.home-assistant.io/).
-This config is based on the [NSPanel-MF](https://github.com/marcfager/nspanel-mf) config from [marcfager](https://github.com/marcfager), with the [color picker config](https://github.com/MMMZZZZ/Random-Stuff/tree/master/Nextion%20HSV%20Test) from [MMMZZZZ](https://github.com/MMMZZZZ).
-I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/98V7qp4), I couldn't have done this without you!
+In this Github repo you can find my [Sonoff NSPanel](https://sonoff.tech/product/smart-wall-swtich/nspanel/) config with [SPHome](https://esphome.io/) and [Home Assistant](https://www.home-assistant.io/).\
+This config is based on the [NSPanel-MF](https://github.com/marcfager/nspanel-mf) config from [marcfager](https://github.com/marcfager), with the [color picker config](https://github.com/MMMZZZZ/Random-Stuff/tree/master/Nextion%20HSV%20Test) from [MMMZZZZ](https://github.com/MMMZZZZ).\
+I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/98V7qp4), I couldn't have done this without you!\
 
 # What I included in my NSPanel configuration
 - Dashboard with weather data, indoor temperature, outdoor temperature
@@ -24,14 +24,14 @@ I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/
 - Maybe change the color temperature buttons into a slider
 
 # Remarks
-I tried to write as much comments as possible, because this can help you understand the configuration. If you still don't understand anything, please let me know.
-Because I'm running two Home Assistant instances (one test and one production), I can't use the homeassistant service directly inside the ESPHome config. Because that way it will toggle the light twice and thus not do anything. That's why I only defined the binary sensors inside ESPHome and did all the automation inside Home Assistant.
+I tried to write as much comments as possible, because this can help you understand the configuration. If you still don't understand anything, please let me know.\
+Because I'm running two Home Assistant instances (one test and one production), I can't use the homeassistant service directly inside the ESPHome config. Because that way it will toggle the light twice and thus not do anything. That's why I only defined the binary sensors inside ESPHome and did all the automation inside Home Assistant.\
 
 # Pictures
-![Dashboard](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-dashboard.png?raw=true)
-![Livingroom](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-livingroom.png?raw=true)
-![Lightdetails](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-lightdetails.png?raw=true)
-![Media](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-media.png?raw=true)
-![Thermostat](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-thermostat.png?raw=true)
-![Settings](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-settings.png?raw=true)
-![Notification](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-notification.png?raw=true)
+![Dashboard](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-dashboard.png?raw=true)\
+![Livingroom](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-livingroom.png?raw=true)\
+![Lightdetails](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-lightdetails.png?raw=true)\
+![Media](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-media.png?raw=true)\
+![Thermostat](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-thermostat.png?raw=true)\
+![Settings](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-settings.png?raw=true)\
+![Notification](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-notification.png?raw=true)\
