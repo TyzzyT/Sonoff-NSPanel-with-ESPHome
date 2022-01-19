@@ -333,8 +333,17 @@ output:
 
 
 button:
+  # Button to restart ESPHome
   - platform: restart
-    name: $friendly_name restart
+    name: "$friendly_name restart"
+    device_class: restart
+    entity_category: config
+  # Button to boot into safe mode
+  - platform: safe_mode
+    name: "$friendly_name restart (Safe Mode)"
+    icon: mdi:restart-alert
+    device_class: restart
+    entity_category: config
   - platform: template
     name: $friendly_name TFT Upload
     device_class: update
@@ -344,11 +353,6 @@ button:
 
 
 switch:
-  # Switch to boot into safe mode
-  - platform: safe_mode
-    name: "$friendly_name restart (Safe Mode)"
-    icon: mdi:restart-alert
-
   - platform: gpio
     name: ${friendly_name} relay 1
     id: relay_1
