@@ -17,6 +17,7 @@ I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/
 - Notifications! You can send a notification from Home Assistant to the NSPanel, which then plays a sound and displays the notification on the screen
 
 # To-do list
+- Create nicer UI elements. The slider doesn't really fit the theme, but main focus was getting it to work technically
 - Configure the media page, currently it can only do play/pause and volume up/down
 - Display CO2 livingroom value on the dashboard/livingroom page
 - Maybe change the rendered color field into a static image
