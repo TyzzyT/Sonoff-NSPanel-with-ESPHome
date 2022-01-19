@@ -1,0 +1,532 @@
+        ##########################################################
+        ## NSPanel - Buttons on display are triggering these automations
+        ##########################################################
+
+  - alias: 'NSPanel - Livingroom - Toggle Staande lamp lamp'
+    id: 'nspanel_livingroom_toggle_staande_lamp'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_staande_lamp
+      from: 'on'
+      to: 'off'
+    condition: []
+    action:
+    - service: homeassistant.toggle
+      data:
+        entity_id: group.light_staande_lamp
+    mode: single
+
+  - alias: 'NSPanel - Livingroom - Toggle Houten lamp'
+    id: 'nspanel_livingroom_toggle_houten_lamp'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_houten_lamp
+      from: 'on'
+      to: 'off'
+    condition: []
+    action:
+    - service: light.toggle
+      data:
+        entity_id: light.houten_lamp_woonkamer
+    mode: single
+
+  - alias: 'NSPanel - Media - Play/pause media'
+    id: 'nspanel_media_play_pause_media'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_media_play_pause
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: media_player.media_play_pause
+      data:
+        entity_id: media_player.sonos_woonkamer
+    mode: single
+
+  - alias: 'NSPanel - Media - Volume up'
+    id: 'nspanel_media_volume_up'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_media_volume_up
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: media_player.volume_up
+      data:
+        entity_id: media_player.sonos_woonkamer
+    mode: queued
+    max: 3
+
+  - alias: 'NSPanel - Media - Volume down'
+    id: 'nspanel_media_volume_down'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_media_volume_down
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: media_player.volume_down
+      data:
+        entity_id: media_player.sonos_woonkamer
+    mode: queued
+    max: 3
+
+  - alias: 'NSPanel - Thermostat - CV livingroom setpoint min'
+    id: 'nspanel_thermostat_cv_livingroom_setpoint_min'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_cv_setpoint_min
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.anna
+      data:
+        temperature: "{{ state_attr('climate.anna' , 'temperature')|int - 1 }}"
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - CV livingroom setpoint plus'
+    id: 'nspanel_thermostat_cv_livingroom_setpoint_plus'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_cv_setpoint_plus
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.anna
+      data:
+        temperature: "{{ state_attr('climate.anna' , 'temperature')|int + 1 }}"
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - Airco livingroom setpoint min'
+    id: 'nspanel_thermostat_airco_livingroom_setpoint_min'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_airco_setpoint_min
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.airco_woonkamer
+      data:
+        temperature: "{{ state_attr('climate.airco_woonkamer' , 'temperature')|int - 1 }}"
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - Airco livingroom setpoint plus'
+    id: 'nspanel_thermostat_airco_livingroom_setpoint_plus'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_airco_setpoint_plus
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: climate.set_temperature
+      target:
+        entity_id: climate.airco_woonkamer
+      data:
+        temperature: "{{ state_attr('climate.airco_woonkamer' , 'temperature')|int + 1 }}"
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - Airco livingroom fan min'
+    id: 'nspanel_thermostat_airco_livingroom_fan_min'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_airco_fan_min
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: fan.decrease_speed
+      target:
+        entity_id: fan.airco_woonkamer
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - Airco livingroom fan plus'
+    id: 'nspanel_thermostat_airco_livingroom_fan_plus'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_airco_fan_plus
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: fan.increase_speed
+      target:
+        entity_id: fan.airco_woonkamer
+    mode: single
+
+  - alias: 'NSPanel - Thermostat - Airco livingroom fan swing toggle'
+    id: 'nspanel_thermostat_airco_livingroom_fan_swing_toggle'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_thermostat_airco_fan_swing_toggle
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: switch.toggle
+      target:
+        entity_id: switch.airco_woonkamer_leftright
+    mode: single
+
+
+        ##########################################################
+        ## NSPanel - Light details page
+        ##########################################################
+
+  - alias: 'NSPanel - Light details - Set toggle on display'
+    id: 'nspanel_lightdetails_set_toggle_on_display'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id:
+        - sensor.sonoff_nspanel1_zolder_light_details_id
+        - light.houten_lamp_woonkamer
+        - light.staand_lampkapje_woonkamer
+        - light.lamp_achter_tv
+    condition: []
+    action:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: |
+                {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+                {% if 'button_1' in state %}
+                  {{ is_state('group.staande_lamp_woonkamer', 'on') }}
+                {% elif 'button_2' in state %}
+                  {{ is_state('light.houten_lamp_woonkamer', 'on') }}
+                {% elif 'button_3' in state %}
+                  {{ is_state('light.staand_lampkapje_woonkamer', 'on') }}
+                {% elif 'button_4' in state %}
+                  {{ is_state('light.lamp_achter_tv', 'on') }}
+                {% elif 'button_5' in state %}
+                  {{ is_state('light.unknown', 'on') }}
+                {% elif 'button_6' in state %}
+                  {{ is_state('light.unknown', 'on') }}
+                {% elif 'button_7' in state %}
+                  {{ is_state('light.unknown', 'on') }}
+                {% elif 'button_8' in state %}
+                  {{ is_state('switch.plafondlamp_zolder', 'on') }}
+                {% endif %}
+          sequence:
+            - service: switch.turn_on
+              target:
+                entity_id: switch.sonoff_nspanel1_zolder_light_details_toggle
+        - conditions:
+            - condition: template
+              value_template: |
+                {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+                {% if 'button_1' in state %}
+                  {{ is_state('group.staande_lamp_woonkamer', 'off') }}
+                {% elif 'button_2' in state %}
+                  {{ is_state('light.houten_lamp_woonkamer', 'off') }}
+                {% elif 'button_3' in state %}
+                  {{ is_state('light.staand_lampkapje_woonkamer', 'off') }}
+                {% elif 'button_4' in state %}
+                  {{ is_state('light.lamp_achter_tv', 'off') }}
+                {% elif 'button_5' in state %}
+                  {{ is_state('light.unknown', 'off') }}
+                {% elif 'button_6' in state %}
+                  {{ is_state('light.unknown', 'off') }}
+                {% elif 'button_7' in state %}
+                  {{ is_state('light.unknown', 'off') }}
+                {% elif 'button_8' in state %}
+                  {{ is_state('switch.plafondlamp_zolder', 'off') }}
+                {% endif %}
+          sequence:
+            - service: switch.turn_off
+              target:
+                entity_id: switch.sonoff_nspanel1_zolder_light_details_toggle
+      default: []
+    mode: single
+
+  - alias: 'NSPanel - Light details - Toggle'
+    id: 'nspanel_lightdetails_toggle'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_light_details_toggle
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: homeassistant.toggle
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_1' in state %}
+            group.staande_lamp_woonkamer
+          {% elif 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% elif 'button_5' in state %}
+            light.unknown
+          {% elif 'button_6' in state %}
+            light.unknown
+          {% elif 'button_7' in state %}
+            light.unknown
+          {% elif 'button_8' in state %}
+            switch.plafondlamp_zolder
+          {% else %}
+            unknown
+          {% endif %}
+    mode: single
+
+  - alias: 'NSPanel - Light details - Set brightness on display'
+    id: 'nspanel_lightdetails_set_brightness_on_display'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id:
+        - sensor.sonoff_nspanel1_zolder_light_details_id
+        - light.houten_lamp_woonkamer
+        - light.staand_lampkapje_woonkamer
+        -  light.lamp_achter_tv
+    condition: []
+    action:
+    - service: number.set_value
+      target:
+        entity_id: number.light_details_brightness_slider
+      data:
+        value: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            {{ state_attr('light.houten_lamp_woonkamer', 'brightness') | float }}
+          {% elif 'button_3' in state %}
+            {{ state_attr('light.staand_lampkapje_woonkamer', 'brightness') | float }}
+          {% elif 'button_4' in state %}
+            {{ state_attr('light.lamp_achter_tv', 'brightness') | float }}
+          {% else %}
+            unknown
+          {% endif %}
+    mode: single
+
+  - alias: 'NSPanel - Light details - Brightness'
+    id: 'nspanel_lightdetails_brightness'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: sensor.light_details_brightness_slider_sensor
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        brightness: |
+          {{ states('sensor.light_details_brightness_slider_sensor') | float }}
+    mode: single
+
+  - alias: 'NSPanel - Light details - Color'
+    id: 'nspanel_lightdetails_color'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: 
+        - sensor.light_details_color_sensor_red
+        - sensor.light_details_color_sensor_green
+        - sensor.light_details_color_sensor_blue
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        effect: ''
+        rgb_color:
+          - |
+            {{ states('sensor.light_details_color_sensor_red') | float }}
+          - |
+            {{ states('sensor.light_details_color_sensor_green') | float }}
+          - |
+            {{ states('sensor.light_details_color_sensor_blue') | float }}
+    - delay: 00:00:01
+    mode: single
+
+  - alias: 'NSPanel - Light details - Xtra cold white'
+    id: 'nspanel_lightdetails_xtra_cold_white'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_light_details_xtra_cold_white
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        effect: ''
+        color_temp: 153
+    mode: single
+
+  - alias: 'NSPanel - Light details - Cold white'
+    id: 'nspanel_lightdetails_cold_white'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_light_details_cold_white
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        effect: ''
+        color_temp: 250
+    mode: single
+
+  - alias: 'NSPanel - Light details - Warm white'
+    id: 'nspanel_lightdetails_warm_white'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_light_details_warm_white
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        effect: ''
+        color_temp: 420
+    mode: single
+
+  - alias: 'NSPanel - Light details - Xtra warm white'
+    id: 'nspanel_lightdetails_xtra_warm_white'
+    description: ''
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.nspanel_zolder_light_details_xtra_warm_white
+      from: 'off'
+      to: 'on'
+    condition: []
+    action:
+    - service: light.turn_on
+      target:
+        entity_id: |
+          {% set state = states('sensor.sonoff_nspanel1_zolder_light_details_id') | trim %}
+          {% if 'button_2' in state %}
+            light.houten_lamp_woonkamer
+          {% elif 'button_3' in state %}
+            light.staand_lampkapje_woonkamer
+          {% elif 'button_4' in state %}
+            light.lamp_achter_tv
+          {% else %}
+            unknown
+          {% endif %}
+      data:
+        effect: ''
+        color_temp: 500
+    mode: single
+
+
+        ##########################################################
+        ## NSPanel - Switch NSPanel alarm page
+        ##########################################################
+
+  - alias: 'NSPanel - Switch NSPanel alarm page'
+    id: 'nspanel_switch_nspanel_alarm_page'
+    trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: ~
+    action:
+    - condition: state
+      entity_id: input_boolean.disable_alarm_automation
+      state: 'off'
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: alarm_control_panel.home_alarm
+              state: disarmed
+          sequence:
+            - service: switch.turn_off
+              target:
+                entity_id: switch.sonoff_nspanel1_zolder_alarm_screen
+      default:
+        - service: switch.turn_on
+          target:
+            entity_id: switch.sonoff_nspanel1_zolder_alarm_screen
+    mode: single
