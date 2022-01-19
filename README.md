@@ -1,10 +1,10 @@
 # Sonoff-NSPanel-with-ESPHome
 
-In this Github repo you can find my [Sonoff NSPanel](https://sonoff.tech/product/smart-wall-swtich/nspanel/) config with [SPHome](https://esphome.io/) and [Home Assistant](https://www.home-assistant.io/).\
+In this Github repo you can find my [Sonoff NSPanel](https://sonoff.tech/product/smart-wall-swtich/nspanel/) config with [ESPHome](https://esphome.io/) and [Home Assistant](https://www.home-assistant.io/).\
 This config is based on the [NSPanel-MF](https://github.com/marcfager/nspanel-mf) config from [marcfager](https://github.com/marcfager), with the [color picker config](https://github.com/MMMZZZZ/Random-Stuff/tree/master/Nextion%20HSV%20Test) from [MMMZZZZ](https://github.com/MMMZZZZ).\
 I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/98V7qp4), I couldn't have done this without you!
 
-# What I included in my NSPanel configuration
+# What is included in my NSPanel configuration
 - Dashboard with weather data, indoor temperature, outdoor temperature
 - Lights page, where you can tap to toggle the light and long-press to get a detailed overview of the light
 - Light detail page, where you can set brightness, color temperature, light color
@@ -16,6 +16,11 @@ I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/
 - Alarm page, which is being displayed while the home alarm is active (may be used later as an alarm arm/disarm page)
 - Notifications! You can send a notification from Home Assistant to the NSPanel, which then plays a sound and displays the notification on the screen
 
+# Remarks
+I tried to write as much comments as possible, because this can help you understand the configuration. If you still don't understand anything, please let me know.\
+Because I'm running two Home Assistant instances (one test and one production), I can't use the homeassistant service directly inside the ESPHome config. Because that way it will toggle the light twice and thus not do anything. That's why I only defined the binary sensors inside ESPHome and did all the automation inside Home Assistant.\
+To make sure that all data on the display is being updated, I'm using a template switch called nextion_init. All values are only being send to the display after this switch is turned on. Switch will automatically turn on once the API has an active connection.
+
 # To-do list
 - Create nicer UI elements. The slider doesn't really fit the theme, but main focus was getting it to work technically
 - Configure the media page, currently it can only do play/pause and volume up/down
@@ -23,11 +28,6 @@ I want to thank everyone on the [Unofficial Nextion Discord](https://discord.gg/
 - Display CO2 livingroom value on the dashboard/livingroom page
 - Maybe change the rendered color field into a static image
 - Maybe change the color temperature buttons into a slider
-
-# Remarks
-I tried to write as much comments as possible, because this can help you understand the configuration. If you still don't understand anything, please let me know.\
-Because I'm running two Home Assistant instances (one test and one production), I can't use the homeassistant service directly inside the ESPHome config. Because that way it will toggle the light twice and thus not do anything. That's why I only defined the binary sensors inside ESPHome and did all the automation inside Home Assistant.\
-To make sure that all data on the display is being updated, I'm using a template switch called nextion_init. All values are only being send to the display after this switch is turned on. Switch will automatically turn on once the API has an active connection.
 
 # Pictures
 ![Dashboard](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-dashboard.png?raw=true)\
