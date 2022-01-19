@@ -28,5 +28,10 @@ I tried to write as much comments as possible, because this can help you underst
 Because I'm running two Home Assistant instances (one test and one production), I can't use the homeassistant service directly inside the ESPHome config. Because that way it will toggle the light twice and thus not do anything. That's why I only defined the binary sensors inside ESPHome and did all the automation inside Home Assistant.
 
 # Pictures
-*Dashboard*
 ![Dashboard](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-dashboard.png?raw=true)
+![Livingroom](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-livingroom.png?raw=true)
+![Lightdetails](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-lightdetails.png?raw=true)
+![Media](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-media.png?raw=true)
+![Thermostat](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-thermostat.png?raw=true)
+![Settings](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-settings.png?raw=true)
+![Notification](https://github.com/TyzzyT/Sonoff-NSPanel-with-ESPHome/blob/main/images/page-notification.png?raw=true)
