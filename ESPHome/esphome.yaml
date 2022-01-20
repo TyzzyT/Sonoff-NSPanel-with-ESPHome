@@ -494,11 +494,11 @@ sensor:
     state_class: measurement
     accuracy_decimals: 1
 
-  # Current page displayed on the Nextion screen. This is not working yet, work in progress
+  # Current page displayed on the Nextion screen. This is received by custom code that runs on every page as Postinitialize Event
   - platform: nextion
     name: $name Current display page
     id: disp1_current_page
-    variable_name: dp
+    component_name: "currentpage"
 
   # Grab current outdoor temperature from Home Assistant
   - platform: homeassistant
