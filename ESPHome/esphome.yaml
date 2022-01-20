@@ -498,7 +498,7 @@ sensor:
   - platform: nextion
     name: $name Current display page
     id: disp1_current_page
-    component_name: "currentpage"
+    variable_name: dp
 
   # Grab current outdoor temperature from Home Assistant
   - platform: homeassistant
