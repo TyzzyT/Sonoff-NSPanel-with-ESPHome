@@ -701,6 +701,9 @@ text_sensor:
               symbol=17;
             } else if (id(weather_symbol).state == "sunny") {
               symbol=18;
+              if (id(sun_sun).state == "below_horizon") {
+                symbol = 6;
+              }
             } else if (id(weather_symbol).state == "windy" || id(weather_symbol).state == "windy-variant") {
               symbol=19;              
             }
