@@ -499,6 +499,7 @@ sensor:
     name: $name Current display page
     id: disp1_current_page
     variable_name: dp
+    icon: mdi:book-open-page-variant
 
   # Grab current outdoor temperature from Home Assistant
   - platform: homeassistant
@@ -554,6 +555,7 @@ sensor:
     name: Light details brightness slider sensor
     id: light_details_brightness_slider_sensor
     component_name: "lampbrightslider"
+    icon: mdi:brightness-percent
     accuracy_decimals: 0
     on_value:
       then:
@@ -567,16 +569,19 @@ sensor:
     name: Light details color sensor red
     id: light_details_color_sensor_red
     component_name: "lampcolorred"
+    icon: mdi:palette
     accuracy_decimals: 0
   - platform: nextion
     name: Light details color sensor green
     id: light_details_color_sensor_green
     component_name: "lampcolorgreen"
+    icon: mdi:palette
     accuracy_decimals: 0
   - platform: nextion
     name: Light details color sensor blue
     id: light_details_color_sensor_blue
     component_name: "lampcolorblue"
+    icon: mdi:palette
     accuracy_decimals: 0
 
 
@@ -708,6 +713,7 @@ text_sensor:
     id: nextion_light_details_id
     internal: false # must be available in front-end for automations
     component_name: touchedlight
+    icon: mdi:lightbulb-variant
 
 
 # Configure the screen itself
