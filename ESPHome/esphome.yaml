@@ -468,7 +468,24 @@ sensor:
   # WiFi Signal sensor.
   - platform: wifi_signal
     name: $friendly_name WiFi signal
+    id: wifi_sig
     update_interval: 60s
+    on_value:
+      then:
+        - wait_until:
+            switch.is_on: nextion_init
+        - lambda: |-
+            int symbol=24; // 24 is lowest wifi signal
+            if (id(wifi_sig).state < -70) {
+              symbol=24;
+            } else if (id(wifi_sig).state > -45) {
+              symbol=27;
+            } else if (id(wifi_sig).state > -50) {
+              symbol=26;
+            } else if (id(wifi_sig).state > -71) {
+              symbol=25;
+            }
+            id(disp1).send_command_printf("settings.wifi.pic=%i", symbol);
 
   - platform: adc
     id: ntc_source
